@@ -39,10 +39,15 @@ Password akun 1: omega_centaury
 Nama Akun 2: fariz_kusumadinata
 
 Password akun 2: Arwana777 
+
 1. Apa itu Django Authentication Form?
-2. Apa perbedaan autorisasi dan autentikasi?
-3. Kelemahan dan kelebihan session dan cookies?
-4. Apakah pengguna cookie aman secara default?
+   Django Authentication Form merupakan Form yang disediakan oleh DJango untuk mengolah input data oleh pengguna untuk proses autentikasi. Authentication Form ini mengolah data seperti username dan password beserta validasinya.
+3. Apa perbedaan autorisasi dan autentikasi?
+   Autorisasi merupakan proses menentukan izin dari seorang pengguna dalam aksesnya. Autorisasi menentukan bagi setiap pengguna tindakan apa saja yang dapat mereka lakukan atau objek apa saja yang dapat mereka akses. Autentikasi merupakan proses menverifikasi seorang pengguna berdasarkan username dan passwordnya. Autentikasi hanya bertindak dalam memberikan akses bagi siapa saja yang memiliki kredensial yang telah diberi akses.
+5. Kelemahan dan kelebihan session dan cookies?
+   Dalam kelebihannya, coookies membantu meningkatkan pengalaman pengguna pada website. Cookies dapat menggunakan data yang telah diperoleh dari pengguna untuk mempersonalisasikan dan menyesuaikan website dengan pengguna. Adapun kelemahannya, cookies juga rentan terhadap ancaman. Salah satu ancaman yang umum dialami oleh cookies adalah Cross-Site Request Forgery yang dapat membahayakan data pengguna.
+7. Apakah pengguna cookie aman secara default?
+   Secara default, cookies tidak aman. Akan tetapi terdapat cara-cara untuk meningkatkan keamanan dari cookies pada website.
 
 
 
