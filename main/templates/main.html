@@ -9,11 +9,23 @@
 <h4>Kelas: </h4>
 <p>PBP-A</p> 
 
+
 <a href="{% url 'main:create_products' %}">
   <button>+ Add</button>
 </a>
+<a href="{% url 'main:logout' %}">
+  <button>Logout</button>
+</a>
+<h5>Sesi terakhir login: {{ last_login }}</h5>
 
 <hr>
+
+<a href="?filter=all">
+    <button type="button">All Products</button>
+</a>
+<a href="?filter=my">
+    <button type="button">My Products</button>
+</a>
 
 {% if not products_list %}
 <p>Belum ada produk pada kapuas sporstwear.</p>
@@ -35,7 +47,7 @@
 
   <p>{{ products.content|truncatewords:25 }}...</p>
 
-  <p><a href="{% url 'main:show_products' news.id %}"><button>Details</button></a></p>
+  <p><a href="{% url 'main:show_products' products.id %}"><button>Details</button></a></p>
 </div>
 
 <hr>
