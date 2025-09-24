@@ -33,8 +33,11 @@ Tugas Individu 3
 Tugas Individu 4
 
 Nama Akun 1: faiz_kusumadinata
+
 Password akun 1: omega_centaury
+
 Nama Akun 2: fariz_kusumadinata
+
 Password akun 2: Arwana777 
 1. Apa itu Django Authentication Form?
 2. Apa perbedaan autorisasi dan autentikasi?
