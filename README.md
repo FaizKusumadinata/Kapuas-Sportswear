@@ -1,6 +1,8 @@
 Nama: Faiz Kusumadinata
 Kelas: PBP A
 NPM: 2406426196
+
+Tugas Individu 2
 1. Langkah-langkah implementasi checkpoint: 
    Dalam membuat proyek Django baru, langkah pertama adalah membuat folder baru untuk proyek. Setelah folder dibuat, direktorinya dibuka dengan command prompt atau Windows Powershell. Dalam terminal, aktifkan Virtual Environment dan proyek Django baru dibuat dengan command "django-admin startproject <proyek> .". Dengan command tersebut, maka proyek telah dibuat di dalam folder proyek. Setelah proyek dibuat, maka langkah selanjutnya adalah membuat konfigurasi dari proyek, seperti nama host database, konfigurasi environment, dan lainnya. Dibuat file ".env" yang akan digunakan untuk development lokal dan ".env.prod" yang akan digunakan untuk production deployment. ".env.prod" juga akan yang menjadi file dimana kredensial database disimpan.
    
@@ -17,4 +19,28 @@ NPM: 2406426196
    Migrasi pada database Django dijalankan setelah menerima command "makemigrations" dan "migrate". Setelah command dijalankan, maka program akan membandingkan kondisi terkini dari model Django dengan database. Jika telah terjadi perubahan pada model Django, maka database akan diupdate. Command "makemigrations" berfungsi menyiapkan segala perubahan pada model Django dan "migrate" berfungsi untuk melakukan perubahan pada database untuk mengikuti kondisi terkini dari model Django.
    
 6. Framework Django: 
-   Framework Django direkomendasikan bagi pemula untuk mempelajari pengembangan perangkat lunak karena memiliki sejumlah keuntungan. Django merupakan framework open source yang fleksibel dalam penggunaannya, memiliki keamanan yang bagus, memiliki performa yang cepat, dan kaya akan fitur. 
+   Framework Django direkomendasikan bagi pemula untuk mempelajari pengembangan perangkat lunak karena memiliki sejumlah keuntungan. Django merupakan framework open source yang fleksibel dalam penggunaannya, memiliki keamanan yang bagus, memiliki performa yang cepat, dan kaya akan fitur.
+
+
+
+Tugas Individu 3
+1. Mengapa Data Delivery diperlukan?
+2. Lebih baik XML atau JSON? Mengapa JSON lebih populer?
+3. Mengapa memerlukan is_valid() pada form Django?
+4. Apa fungsi csrf_token pada form Django?
+
+
+Tugas Individu 4
+Nama Akun 1: faiz_kusumadinata
+Password akun 1: omega_centaury
+Nama Akun 2: fariz_kusumadinata
+Password akun 2: Arwana777 
+1. Apa itu Django Authentication Form?
+2. Apa perbedaan autorisasi dan autentikasi?
+3. Kelemahan dan kelebihan session dan cookies?
+4. Apakah pengguna cookie aman secara default?
+
+
+
+
+
