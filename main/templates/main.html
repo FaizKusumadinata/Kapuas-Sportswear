@@ -1,14 +1,7 @@
 {% extends 'base.html' %}
  {% block content %}
+ {% include 'navbar.html' %}
 <h1>Kapuas Sportswear</h1>
-
-<h4>Nama Aplikasi: </h4>
-<p>Kapuas Sportswear</p> 
-<h4>Nama: </h4>
-<p>Faiz Kusumadinata</p>
-<h4>Kelas: </h4>
-<p>PBP-A</p> 
-
 
 <a href="{% url 'main:create_products' %}">
   <button>+ Add</button>
@@ -23,7 +16,7 @@
 <a href="?filter=all">
     <button type="button">All Products</button>
 </a>
-<a href="?filter=my">
+<a href="?filter=filter">
     <button type="button">My Products</button>
 </a>
 
@@ -37,8 +30,8 @@
 
   <p><b>{{ products.get_category_display }}</b>{% if products.is_featured %} | 
     <b>Featured</b>{% endif %}{% if products.is_products_hot %} | 
-    <b>Hot</b>{% endif %} | <i>{{ products.created_at|date:"d M Y H:i" }}</i> 
-    | Views: {{ products.products_views }}</p>
+    <b>Hot</b>{% endif %}
+    | Sales: {{ products.products_views }}</p>
 
   {% if products.thumbnail %}
   <img src="{{ products.thumbnail }}" alt="thumbnail" width="150" height="100">
@@ -48,6 +41,20 @@
   <p>{{ products.content|truncatewords:25 }}...</p>
 
   <p><a href="{% url 'main:show_products' products.id %}"><button>Details</button></a></p>
+    {% if user.is_authenticated and products.user == user %}
+    <a href="{% url 'main:update_products' products.pk %}">
+        <button>
+            Edit
+        </button>
+    </a>
+    <a href="{% url 'main:delete_product' products.pk %}">
+      <button>
+        Delete
+      </button>
+    </a>
+    {% endif %}
+
+
 </div>
 
 <hr>

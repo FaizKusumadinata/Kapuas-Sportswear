@@ -37,3 +37,4 @@ class Products(models.Model):
     
     def content(self):
         return self.description
+    

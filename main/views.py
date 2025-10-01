@@ -16,6 +16,16 @@ def show_main(request):
     filter_type = request.GET.get("filter", "all")
     if filter_type == "all":
         products_list = Products.objects.all()
+    elif filter_type == "sepatu":
+        products_list = Products.objects.filter(category="sepatu")
+    elif filter_type == "bola":
+        products_list = Products.objects.filter(category="bola")
+    elif filter_type == "jersey":
+        products_list = Products.objects.filter(category="jersey")
+    elif filter_type == "celana":
+        products_list = Products.objects.filter(category="celana")
+    elif filter_type == "baju":
+        products_list = Products.objects.filter(category="baju")
     else:
         products_list = Products.objects.filter(user=request.user)
     context = {
@@ -112,3 +122,21 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
+
+def update_products(request, id):
+    products = get_object_or_404(Products, pk=id)
+    form = ProductsForm(request.POST or None, instance=products)
+    if form.is_valid() and request.method == 'POST':
+        form.save()
+        return redirect('main:show_main')
+
+    context = {
+        'form': form
+    }
+
+    return render(request, "update_products.html", context)
+
+def delete_product(request, id):
+    products = get_object_or_404(Products, pk=id)
+    products.delete()
+    return HttpResponseRedirect(reverse('main:show_main'))
