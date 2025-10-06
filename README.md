@@ -50,12 +50,16 @@ Password akun 2: Arwana777
 
 1. Apa itu Django Authentication Form?
    Django Authentication Form merupakan Form yang disediakan oleh DJango untuk mengolah input data oleh pengguna untuk proses autentikasi. Authentication Form ini mengolah data seperti username dan password beserta validasinya.
-3. Apa perbedaan autorisasi dan autentikasi?
+2. Apa perbedaan autorisasi dan autentikasi?
    Autorisasi merupakan proses menentukan izin dari seorang pengguna dalam aksesnya. Autorisasi menentukan bagi setiap pengguna tindakan apa saja yang dapat mereka lakukan atau objek apa saja yang dapat mereka akses. Autentikasi merupakan proses menverifikasi seorang pengguna berdasarkan username dan passwordnya. Autentikasi hanya bertindak dalam memberikan akses bagi siapa saja yang memiliki kredensial yang telah diberi akses.
-5. Kelemahan dan kelebihan session dan cookies?
+3. Kelemahan dan kelebihan session dan cookies?
    Dalam kelebihannya, coookies membantu meningkatkan pengalaman pengguna pada website. Cookies dapat menggunakan data yang telah diperoleh dari pengguna untuk mempersonalisasikan dan menyesuaikan website dengan pengguna. Adapun kelemahannya, cookies juga rentan terhadap ancaman. Salah satu ancaman yang umum dialami oleh cookies adalah Cross-Site Request Forgery yang dapat membahayakan data pengguna.
-7. Apakah pengguna cookie aman secara default?
+4. Apakah pengguna cookie aman secara default?
    Secara default, cookies tidak aman. Akan tetapi terdapat cara-cara untuk meningkatkan keamanan dari cookies pada website.
+5. Step-by-step penerapan implementasi:
+   Langkah pertama dalam Tugas Individu 4 ini adalah meng-import Django User Creation Form yang akan digunakan untuk menciptakan dan menggunakan sebuah pengguna dalan menjalankan website. Django User Creation  Form juga menyediakan berbagai fungsi yang dapat digunakan untuk mengelola akses pengguna, seperti login dan logout. Django User Creation Form diimpor di file views.py. Langkah selanjutnya adalah membuat fungsi register di views.py yang akan digunakan untuk menciptakan pengguna. Dalam fungsi views.py, pertama dibuat objek dengan User Creation Form bernama "form". Jika telah dibuat request ke halaman register, yang dicek menggunakan conditional jika requestnya bernilai "POST", maka isi form akan divalidasi terlebih dahulu untuk di save oleh Django. Fungsi register ini akan digunakan oleh halaman baru yang dibuat, yakni register.html. Langkah berikutnya adalah melakukan hal yang sama dengan login. Fungsi login akan menggunakan fungsi login() dari Django untuk meng-autentikasi data login pengguna yang dimasukkan pada halaman login.html. Adapun untuk membuat hanya pengguna yang sudah login yang dapat melihat halaman-halaman lain, maka pada setiap fungsi untuk halaman lain, maka diberikan @login_required() pada bagian atasnya agar hanya user yang sudah login yang dapat melihatnya.
+   Adapun untuk fungsi logout, tidak diperlukan sebuah halaman khusus, melainkan hanya akan digunakan pada sebuah link untuk pengguna logout di halaman main. Langkah selanjutnya adalah menerapkan cookie pada login user. Untuk menerapkan cookie, maka  di-import Django HTTP Redirect Reverse pada views.py yang akan digunakan untuk menyimpan cookie pengguna selama pengguna masih dalam keadaan login pada website. Pada kedua fungsi login dan logout, terdapat bagian yang akan me-redireksikan pengguna ke halamannya masing-masing. Pada redireksi tersebut, terdapat masalah berupa submisi form double. Django HTTPS Response Redirect berfungsi dalam mencegah hal tersebut, sehingga pada fungsi login dan logout, digunakan fungsi reverse dari Django urls dan HTTPS Response Redirection daripada redirection biasa.
+
 
 
 
